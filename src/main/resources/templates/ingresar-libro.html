@@ -8,7 +8,7 @@
     
 
     <!-- Title Page-->
-    <title>Ingresar Categoria - 2Parcial</title>
+    <title>Ingresar Libro - 2Parcial</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -29,17 +29,17 @@
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <h2 class="title">Ingresar Categoría</h2>
+                    <h2 class="title">Ingresar Libros</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST" th:action=@{/guardarLibro} th:object="${libro}">
+                    <form method="POST" th:action=@{/insertLibro} th:object="${libro}">
                        
                         <div class="form-row">
                             <div class="name">Título</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="nombre" th:field="*{nombre}">
-                                    <span th:errors="*{nombre}" style="color: red"></span>
+                                    <input class="input--style-5" type="text" name="titulo" th:field="*{titulo}">
+                                    <span th:errors="*{titulo}" style="color: red"></span>
                                 </div>
                             </div>
                         </div>
@@ -47,8 +47,8 @@
                             <div class="name">Autor</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="nombre" th:field="*{nombre}">
-                                    <span th:errors="*{nombre}" style="color: red"></span>
+                                    <input class="input--style-5" type="text" name="autor" th:field="*{autor}">
+                                    <span th:errors="*{autor}" style="color: red"></span>
                                 </div>
                             </div>
                         </div>
@@ -56,8 +56,8 @@
                             <div class="name">ISBN</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="nombre" th:field="*{nombre}">
-                                    <span th:errors="*{nombre}" style="color: red"></span>
+                                    <input class="input--style-5" type="text" name="isbn" th:field="*{isbn}">
+                                    <span th:errors="*{isbn}" style="color: red"></span>
                                 </div>
                             </div>
                         </div>
@@ -66,9 +66,9 @@
                             <div class="value">
                                 <div class="input-group">
                                     <th>
-	                                    <select class="input--style-5" th:field="*{id}">
-											<option th:each="producto: ${productList}" th:value="${producto.id}"
-											th:text="${producto.nombre}">
+	                                    <select class="input--style-5" th:field="*{categoria.codigo}">
+											<option th:each="categoria: ${categorias}" th:value="${categoria.codigo}"
+											th:text="${categoria.nameCategoria}">
 											</option>
 										</select>
 									</th>
@@ -86,7 +86,6 @@
                         </div>
                         
                         <div sytle="display: flex;">
-                            <a href="/listado"><button class="btn btn--radius-2 btn--red" type="button" style="margin-right: 50px">Lista de estudiantes</button></a>
                             <button class="btn btn--radius-2 btn--red" type="submit">Guardar</button>
                         </div>
                     </form>

@@ -32,21 +32,20 @@
                     <h2 class="title">Ingresar Categoría</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST" th:action=@{/guardarCategoria} th:object="${categoria}">
+                    <form method="POST" th:action=@{/insertCategoria} th:object="${categoria}">
                        
                         <div class="form-row">
                             <div class="name">Nombre Categoria</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="nombre" th:field="*{nombre}">
-                                    <span th:errors="*{nombre}" style="color: red"></span>
+                                    <input class="input--style-5" type="text" name="nameCategoria" th:field="*{nameCategoria}">
+                                    <span th:errors="*{nameCategoria}" style="color: red"></span>
                                 </div>
                             </div>
                         </div>
                         
                         <div sytle="display: flex;">
-                            <a href="/listado"><button class="btn btn--radius-2 btn--red" type="button" style="margin-right: 50px">Lista de estudiantes</button></a>
-                            <button class="btn btn--radius-2 btn--red" type="submit">Guardar</button>
+                            <button class="btn btn--radius-2 btn--red" type="submit">Guardar categoría</button>
                         </div>
                     </form>
                 </div>

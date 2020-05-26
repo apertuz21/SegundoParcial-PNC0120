@@ -31,12 +31,15 @@
                 <div class="card-heading">
                     <h2 class="title">Seleccione una opción</h2>
                 </div>
-                <div class="card-body">
+                <div class="card-body" style="padding: 0">
 	                <div style="display: flex; align-items: center;">
+	                	<div>
+	                		<h2><th th:text="${message}"/></h2>
+	                	</div>
 	                	<form method="POST" th:action=@{/ingresarCategoria} style="margin: 15px;">
 	                            <button class="btn btn--radius-2 btn--red" type="submit">Ingresar Categoría</button>
 	                    </form>
-	                    <form method="POST" th:action=@{/ingresarlibro} style="margin: 15px;">
+	                    <form method="POST" th:action=@{/ingresarLibro} style="margin: 15px;">
 	                            <button class="btn btn--radius-2 btn--red" type="submit">Ingresar Libro</button>
 	                    </form>
 	                    <form method="POST" th:action=@{/verLibros} style="margin: 15px;">

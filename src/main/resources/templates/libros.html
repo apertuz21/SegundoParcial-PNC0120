@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Libros - 2Parcial</title>
+</head>
+<body>
+	<style>
+		body {
+		  font: normal medium/1.4 sans-serif;
+		}
+		table {
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+		th, td {
+		  padding: 0.75rem;
+		  text-align: left;
+		  border: 1px solid #eee;
+		}
+		tbody tr:nth-child(odd) {
+		  background: #ccc;
+		}
+	</style>
+	<table>
+		<thead>
+			<th>Título</th>
+			<th>Autor</th>
+			<th>ISBN</th>
+			<th>Categoria</th>
+			<th>Fecha de ingreso</th>
+		</thead>
+		<th:block th:each="libro, row: ${libros}">
+		<tr>
+			<th th:text="${libro.titulo}"/>
+			<th th:text="${libro.autor}"/>
+			<th th:text="${libro.isbn}"/>
+			<th th:text="${libro.categoria.nameCategoria}"/>
+			<th th:text="${libro.fechaDelegate}"/>
+		</tr>
+		</th:block>
+	</table>
+
+</body>
+</html>
